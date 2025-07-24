@@ -3,11 +3,13 @@ const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const chatRoutes = require('./routes/chatRoutes');
 const errorMiddleware = require('./middlewares/errorMiddleware');
+const requestLogger = require('./middlewares/requestLogger');
 require('dotenv').config();
 
 const app = express();
 
 app.use(express.json());
+app.use(requestLogger);
 
 
 app.get('/', (req, res) => {
@@ -24,7 +26,7 @@ app.get('/', (req, res) => {
 
 
 app.use('/api/v1/auth', authRoutes);
-app.use('/api//v1/user', userRoutes);
+app.use('/api/v1/user', userRoutes);
 app.use('/api/v1/chat', chatRoutes);
 
 

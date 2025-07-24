@@ -6,11 +6,17 @@ class UserService {
     return { codename };
   }
 
+  async getUserProfile(userId){
+    const [rows]=await pool.query('SELECT codename,id FROM users WHERE id = ?', [userId]);
+    return rows[0];
+  }
+
   async getUserByCodename(codename) {
     const [rows] = await pool.query('SELECT id, codename FROM users WHERE codename = ?', [
       codename,
     ]);
     return rows[0];
+    
   }
 }
 
