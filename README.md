@@ -26,7 +26,7 @@ A simple, secure messaging API built with Node.js, Express, MySQL, and JWT authe
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/yourusername/chatBackend.git
+git clone https://github.com/O-darel/chatBackend.git
 cd chatBackend
 npm install
 ````
